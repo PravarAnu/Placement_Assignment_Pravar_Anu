@@ -29,3 +29,33 @@
     ![api/v1/posts](./post.png)
 - **/api/v1/getPosts** - This is a `GET` request which is used to get all posts from database.
     ![api/v1/getPosts](./get.png)
+
+
+## For Question 2:
+- All the files/library used above in the question 1 remains same but some more are added
+- Libraries added
+    - bcryptjs - For encryption purpose
+    - cookie-parser - For parsing cookie stored in browser
+    - jsonwebtoken - For creating a token which is encrypted and has information of user and this token is stored as cookie
+- Folders Added
+    - middlewares - For writing all the middlewares
+
+### For authorization I have defined two routes
+- **api/v1/auth/signUp** - This is a `POST` request used for signing up a new user with name, email, password as value given through the body.
+![signin](./signup.png)
+
+- **api/v1/auth/logIn** - This is a `POST` request used for logIn a user with email, password as value given through the body.
+![login](./logIn.png)
+
+***In both the process of signIn and Login we generate a token using JWT which is stored in cookie for authorization during sending 20 posts to Database***
+
+
+## Now Here is the solution for Question 2
+- If a user is unauthrized to send 20 post then this error is returned
+![unauthorized](./unauthorized.png)
+
+- If a user is authorized then he/she can send 20 posts to the database.
+![authorized](./authorized.png)
+
+- All posts can be seen at `/api/v1/getPosts`
+![all posts](./get.png)
